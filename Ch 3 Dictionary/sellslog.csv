@@ -1,0 +1,28 @@
+1,2,3,4
+1,2,3,4
+1,2,N/A,4
+1,2,3,4
+1,2,3,4
+1,2,3,4
+1,2,3,4
+# >>> cr = csv.reader(open("file.csv","rb"))
+# >>> cr.next()
+# >>> print sum(int(x[2]) for x in cr)
+# 1500
+# /Day,pizza per hour, Employee_ID
+with open('C:/Users/gabri/PycharmProjects/BasicPython_Lizard/Ch 3 Dictionary/sellslog.csv', 'r') as file:
+    # pizza = sum(int(x[2]) for x in file)
+    for line in file:
+        arr = line.split(',')
+    num_columns = len(arr)
+    x = arr[3]
+    per_hour = (int(x) for x in arr if x != 'N/A')
+    print("Total pizzas sold = ", sum(per_hour))
+    #     content =
+    # pizza_col = (line[3] for line in file)
+    # per_hour = (int(x) for x in pizza_col if x != 'N/A')
+    # #print(sum(int(x[2]) for x in file))
+    # # pizza_col = (line[3] for line in file)
+    # # per_hour = (int(x) for x in pizza_col if x != 'N/A')
+    # # print(sum(per_hour))
+    # print("Total pizzas sold = ", sum(per_hour))
